@@ -48,7 +48,7 @@ const CityComponent = (props) => {
       <ChooseCityLabel>Find Weather of your city</ChooseCityLabel>
       <SearchBox onSubmit={fetchWeather}>
         <input
-          onChange={(e) => updateCity(e.target.value)}
+          onChange={(e) => updateCity(e.target.value)}  
           placeholder="City"
         />
         <button type={"submit"}>Search</button>

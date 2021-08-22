@@ -10,7 +10,7 @@ export const WeatherInfoIcons = {
     pressure: "/react-weather-app/icons/pressure.svg",
 };
 const Location = styled.span`
-  margin: 15px auto;
+  margin: px auto;
   text-transform: capitalize;
   font-size: 28px;
   font-weight: bold;
@@ -31,6 +31,7 @@ const WeatherInfoLabel = styled.span`
   font-weight: bold;
   font-size: 14px;
 `;
+
 const WeatherIcon = styled.img`
   width: 100px;
   height: 100px;
@@ -74,6 +75,14 @@ const InfoLabel = styled.span`
     text-transform: capitalize;
   }
 `;
+const DaysUpdate = styled.span`
+ 
+  text-transform: capitalize;
+  text-align: end;
+  width: 90%;
+  font-weight: bold;
+  font-size: 14px;
+`;
 
 const WeatherInfoComponent = (props) => {
     const {name, value} = props;
@@ -103,8 +112,9 @@ const WeatherComponent = (props) => {
                 <WeatherIcon src={WeatherIcons[weather?.weather[0].icon]}/>
             </WeatherContainer>
             <Location>{`${weather?.name}, ${weather?.sys?.country}`}</Location>
-
+          
             <WeatherInfoLabel>Weather Info</WeatherInfoLabel>
+            <DaysUpdate>7DaysUpdate</DaysUpdate>
             <WeatherInfoContainer>
                 <WeatherInfoComponent name={isDay ? "sunset" : "sunrise"}
                                       value={`${getTime(weather?.sys[isDay ? "sunset" : "sunrise"])}`}/>

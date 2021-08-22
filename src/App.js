@@ -23,6 +23,8 @@ export const WeatherIcons = {
 
 const Container = styled.div`
   display: flex;
+  padding: 20px;
+  margin: 20px;
   flex-direction: column;
   align-items: center;
   width: 380px;
@@ -32,6 +34,7 @@ const Container = styled.div`
   box-shadow: 0 3px 6px 0 #555;
   background: white;
   font-family: Montserrat;
+  
 `;
 
 const AppLabel = styled.span`
@@ -47,7 +50,14 @@ const CloseButton = styled.span`
   color: white;
   position: absolute;
 `;
-
+const CurrentLocation = styled.li`
+  margin: 20px 25px 10px;
+  text-transform: capitalize;
+  text-align: start;
+  width: 90%;
+  font-weight: bold;
+  font-size: 14px;
+`;
 function App() {
   const [city, updateCity] = useState();
   const [weather, updateWeather] = useState();
@@ -61,6 +71,7 @@ function App() {
   return (
     <Container>
       <AppLabel>React Weather App</AppLabel>
+      <CurrentLocation>CurrentLocation</CurrentLocation>
       {city && weather ? (
         <WeatherComponent weather={weather} city={city} />
       ) : (
